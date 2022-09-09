@@ -1,4 +1,4 @@
-from battery import Battery
+from new_implementation.battery import Battery
 
 
 class SpindlerBattery(Battery):
@@ -7,4 +7,4 @@ class SpindlerBattery(Battery):
         self.last_Service_Date = last_Service_Date
 
     def needs_service(self):
-        return int((self.current_date - self.last_Service_Date).days / 365.2425) > 4
+        return (self.current_date - self.last_Service_Date).days / 365.2425 > 4

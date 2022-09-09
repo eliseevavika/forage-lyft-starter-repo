@@ -1,10 +1,10 @@
 import datetime
-from carFactory import CarFactory
+from new_implementation.carFactory import CarFactory
 
 
 def main():
     current_date = datetime.datetime.now()
-    last_service_date = current_date - datetime.timedelta(5 * 366)  # 5 years ago
+    last_service_date = current_date - datetime.timedelta(5 * 366)
 
     current_mileage = int(31000)
     last_service_mileage = int(0)
