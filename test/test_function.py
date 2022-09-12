@@ -6,6 +6,8 @@ from new_implementation.willoughbyEngine import WilloughbyEngine
 from new_implementation.sternmanEngine import SternmanEngine
 from new_implementation.spindlerBattery import SpindlerBattery
 from new_implementation.nubbinBattery import NubbinBattery
+from new_implementation.carriganTire import CarriganTire
+from new_implementation.octoprimeTire import OctoprimeTire
 
 
 class TestCapuletEngine(unittest.TestCase):
@@ -59,7 +61,7 @@ class TestSternmanEngine(unittest.TestCase):
 class TestSpindlerBattery(unittest.TestCase):
     def test_battery_should_be_serviced(self):
         today = datetime.today().date()
-        last_service_date = today.replace(today.year - 5)
+        last_service_date = today.replace(today.year - 4)
 
         battery = SpindlerBattery(today, last_service_date)
 
@@ -77,7 +79,7 @@ class TestSpindlerBattery(unittest.TestCase):
 class TestNubbinBattery(unittest.TestCase):
     def test_battery_should_be_serviced(self):
         today = datetime.today().date()
-        last_service_date = today.replace(today.year - 3)
+        last_service_date = today.replace(today.year - 5)
 
         battery = NubbinBattery(today, last_service_date)
 
@@ -90,6 +92,38 @@ class TestNubbinBattery(unittest.TestCase):
         battery = NubbinBattery(today, last_service_date)
 
         self.assertFalse(battery.needs_service())
+
+
+class TestCarriganTire(unittest.TestCase):
+    def test_tire_should_be_serviced(self):
+        wear_sensors = ["1", "0", "0.9", "0.4"]
+
+        tire = CarriganTire(wear_sensors)
+
+        self.assertTrue(tire.needs_service())
+
+    def test_tire_should_not_be_serviced(self):
+        wear_sensors = ["0.8", "0", "0.8", "0.4"]
+
+        tire = CarriganTire(wear_sensors)
+
+        self.assertFalse(tire.needs_service())
+
+
+class TestOctoprimeTire(unittest.TestCase):
+    def test_tire_should_be_serviced(self):
+        wear_sensors = ["1", "1", "0.9", "0.4"]
+
+        tire = OctoprimeTire(wear_sensors)
+
+        self.assertTrue(tire.needs_service())
+
+    def test_tire_should_not_be_serviced(self):
+        wear_sensors = ["0.1", "0", "0.3", "0.4"]
+
+        tire = OctoprimeTire(wear_sensors)
+
+        self.assertFalse(tire.needs_service())
 
 
 if __name__ == '__main__':
