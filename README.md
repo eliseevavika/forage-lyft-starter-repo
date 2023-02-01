@@ -12,6 +12,7 @@
   <a href="#about">About</a> •
   <a href="#tasks">Tasks</a> •
   <a href="#skills">Skills</a> •
+  <a href="#uml">UML</a> •
   <a href="#additional-topics">Additional topics</a>
 </p>
 
@@ -31,13 +32,22 @@ Throughout the program, I had to solve the following tasks:
 
 ## Skills
 
-Skills have been acquired
+Skills have been acquired:
 - Software Architecture
 - Python
 - UML
 - Refactoring
 - Unit Testing
 - TDD
+
+## UML
+UML class diagram that represents a new reorganized architecture
+<h1 align="center">
+  <br>
+<img src="image/UMLDiagram.png"
+     alt="Markdown Monster icon"
+     style="height: 700px; width:5500px;" />
+</h1>
 
 ## Additional topics
 
